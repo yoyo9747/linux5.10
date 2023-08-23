@@ -42,7 +42,6 @@
 *.su
 *.symtypes
 *.tab.[ch]
-*.tar
 *.xz
 *.zst
 Module.symvers
