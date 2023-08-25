@@ -202,7 +202,14 @@ static void select_policy(struct f2fs_sb_info *sbi, int gc_type,
 			int type, struct victim_sel_policy *p)
 {
 	struct dirty_seglist_info *dirty_i = DIRTY_I(sbi);
+	if(gc_type==FG_GC){
+		printk("FG_GC");
 
+	}
+	else if(gc_type==BG_GC){
+		printk("BG_GC");
+		printk("%lu\n",dirty_i->nr_dirty[DIRTY]);
+	}
 	if (p->alloc_mode == SSR) {
 		p->gc_mode = GC_GREEDY;
 		p->dirty_bitmap = dirty_i->dirty_segmap[type];
